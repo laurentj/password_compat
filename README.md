@@ -10,9 +10,9 @@ Status: BETA-1
 Requirements
 ============
 
-This library requires PHP >= 5.3.7. If you attempt to use it on an earlier version, it will raise an error and not define the API.
+This library requires PHP >= 5.3.3 on Debian Squeeze or 5.3.7 on other distributions. If you attempt to use it on an earlier version, it will raise an error and not define the API.
 
-The reason for this is that PHP prior to 5.3.7 contains a security issue with its BCRYPT implementation. Therefore, it's highly recommended that you upgrade to a newer version of PHP prior to using this layer.
+The reason for this is that PHP prior to 5.3.7 (or prior to 5.3.3-7+squeeze4 on Debian) contains a security issue with its BCRYPT implementation. Therefore, it's highly recommended that you upgrade to a newer version of PHP prior to using this layer.
 
 Installation
 ============

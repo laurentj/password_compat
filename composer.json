@@ -1,9 +1,9 @@
 {
-	"name": "ircmaxell/password-compat",
-	"description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+	"name": "laurentj/password-compat",
+	"description": "ircmaxell/password-compat with PHP version >= 5.3.3 requirment for Debian squeeze. A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
 	"version": "1.0.0-beta1",
 	"keywords": ["password", "hashing"],
-	"homepage": "https://github.com/ircmaxell/password_compat",
+	"homepage": "https://github.com/laurentj/password_compat",
 	"license": "MIT",
 	"authors": [
 		{
@@ -13,9 +13,10 @@
 		}
 	],
 	"require": {
-		"php": ">= 5.3.7"
+		"php": ">= 5.3.3"
 	},
 	"autoload": {
 		"files": ["lib/password.php"]
 	}
 }
+
