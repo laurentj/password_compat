@@ -17,8 +17,10 @@
   */
 function can_use_password_API () {
     if (version_compare(PHP_VERSION, '5.3.7', '>=')) {
-        define('_PASSWORD_CRYPT_HASH_FORMAT', '$2y$%02d$');
-        define('_PASSWORD_CRYPT_PROLOG', '$2y$');
+        if (!defined('_PASSWORD_CRYPT_HASH_FORMAT'))
+            define('_PASSWORD_CRYPT_HASH_FORMAT', '$2y$%02d$');
+        if (!defined('_PASSWORD_CRYPT_PROLOG'))
+            define('_PASSWORD_CRYPT_PROLOG', '$2y$');
         return true;
     }
     if (version_compare(PHP_VERSION, '5.3.3', '<')) {
@@ -29,8 +31,10 @@ function can_use_password_API () {
     // so we can use crypt() securely with $2a$ ($2y$ is not available)
     if (preg_match('/squeeze(\d+)$/', PHP_VERSION, $m)) {
         if (intval($m[1]) >= 4) {
-            define('_PASSWORD_CRYPT_HASH_FORMAT', '$2a$%02d$');
-            define('_PASSWORD_CRYPT_PROLOG', '$2a$');
+            if (!defined('_PASSWORD_CRYPT_HASH_FORMAT'))
+                define('_PASSWORD_CRYPT_HASH_FORMAT', '$2a$%02d$');
+            if (!defined('_PASSWORD_CRYPT_PROLOG'))
+                define('_PASSWORD_CRYPT_PROLOG', '$2a$');
             return true;
         }
     }
